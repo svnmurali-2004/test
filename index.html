@@ -6,14 +6,16 @@
     <title>Google Sign-In Example</title>
     
     <!-- Include the Google Sign-In script -->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    
     
     <!-- Include your Google Client ID -->
     <meta name="google-signin-client_id" content="45763731408-au8is5o2rnhf2hjvpcocd0qei6r8208e.apps.googleusercontent.com">
 </head>
 <body>
     <!-- Google Sign-In button -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <div class="g-signin2" data-onsuccess="onSignIn" data-width="200" data-height="40" data-theme="dark"></div>
+    <div id="name">hello</div>
 
     <script>
         console.log("script started")
@@ -23,7 +25,8 @@
             console.log('ID: ' + profile.getId());
             console.log('Name: ' + profile.getName());
             console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
+            document.getElementbyId("name").innerHTML= profile.getEmail()
+            
             // You can add more functionality here, such as redirecting the user or displaying their information.
         }
         console.log("script ended")
